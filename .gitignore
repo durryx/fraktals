@@ -6,8 +6,8 @@ conan-cache/
 
 # other
 include/glad
-!include/glad/include
-!include/glad/src
+#!include/glad/include
+#!include/glad/src
 include/glfw
 include/imgui
 # implementation files moved and modified

@@ -1,0 +1,56 @@
+# Build directories and binary files
+build/
+out/
+cmake-build-*/
+conan-cache/
+
+# other
+include/glad
+!include/glad/include
+!include/glad/src
+include/glfw
+include/imgui
+# implementation files moved and modified
+src/sdl/*
+src/fltk/*
+src/CMakeFiles/*
+fraktals_old/
+CMakeFiles/
+.devcontainer/
+.github/
+_deps/
+*.bkp
+DartConfiguration.tcl
+imgui.ini
+.*CMakeCache.txt.*
+CMakePresets.json
+
+
+# User spesific settings
+CMakeUserPresets.json
+
+# IDE files
+.vs/
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*~
+_ReSharper*
+*.log
+
+# OS Generated Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.Trash-*
+$RECYCLE.BIN/
+.TemporaryItems
+ehthumbs.db
+Thumbs.db

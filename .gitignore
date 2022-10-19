@@ -5,8 +5,8 @@ cmake-build-*/
 conan-cache/
 
 # other
-include/glad
-#!include/glad/include
+include/glad/*
+!include/glad/CMakeLists.txt
 #!include/glad/src
 include/glfw
 include/imgui
@@ -22,7 +22,7 @@ _deps/
 *.bkp
 DartConfiguration.tcl
 imgui.ini
-.*CMakeCache.txt.*
+.*CMakeCache.txt
 CMakePresets.json
 
 

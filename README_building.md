@@ -55,35 +55,31 @@ A full build has different steps:
 To configure the project, use `cmake` or `cmake-gui`.
 
 #### (2.a) Configuring via cmake:
-With Cmake directly:
-```
-    cmake -S . -B ./build
-```
-Cmake will automatically create the `./build` folder if it does not exist, and it wil configure the project.
+
+TODO
+
 #### (2.b) Configuring via cmake-gui:
 
-Open the GUI in the root folder:
+Open the GUI in the project root folder:
 
 ```
 cmake-gui .
 ```
-Set the build directory:
+Set the build directory to `out`, disable warnings-as-errors and generate. For further debugging set the sanitizers, same goes for optimization.
 
-![build_dir](https://user-images.githubusercontent.com/16418197/82524586-fa48e380-9af4-11ea-8514-4e18a063d8eb.jpg)
-
-Configure the generator (set the various flags to your needs):
-
-![generate](https://user-images.githubusercontent.com/16418197/82781591-c97feb80-9e1f-11ea-86c8-f2748b96f516.png)
-
-Generate:
-
-![generate](https://user-images.githubusercontent.com/16418197/82781591-c97feb80-9e1f-11ea-86c8-f2748b96f516.png)
+![build_dir](cmake-gui.png)
 
 
 ### (3) Build the project
 Build the project for all targets:
 ```
-    cmake --build ./build
+    cmake --build out/build/unixlike-clang-debug/
 ```
 
+or
+
+```
+TODO
+```
 ### Editing and git directives
+TODO

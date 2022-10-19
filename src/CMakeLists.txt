@@ -53,9 +53,24 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE "GLFW_INCLUDE_NONE")
 
 # glad
 set(GLAD_DIR "${LIB_DIR}/glad")
-add_library("glad" "${GLAD_DIR}/src/glad.c")
-target_include_directories("glad" PRIVATE "${GLAD_DIR}/include")
-target_include_directories(${PROJECT_NAME} PRIVATE "${GLAD_DIR}/include")
+#add_library("glad" "${GLAD_DIR}/src/glad.c")
+
+#add_library(glad ${GLAD_DIR}/include/glad/glad.h ${GLAD_DIR}/src/glad.c)
+#add_library(
+#        glad
+#        ${GLAD_DIR}/include/glad/glad.h
+#        ${GLAD_DIR}/src/glad.c
+#        ${GLAD_DIR}/include/KHR/khrplatform.h
+#)
+#target_include_directories("glad" PRIVATE "${GLAD_DIR}/include")
+add_subdirectory(${GLAD_DIR} ${GLAD_DIR})
+
+
+# copy shaders
+add_custom_target(copy_assets
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ../../../../src/shaders/ ${CMAKE_CURRENT_BINARY_DIR}/shaders
+)
+add_dependencies(${PROJECT_NAME} copy_assets)
 
 # linkng static and global dependences
 target_link_libraries(${PROJECT_NAME}
@@ -64,7 +79,6 @@ target_link_libraries(${PROJECT_NAME}
     CLI11::CLI11 
     fmt::fmt 
     spdlog::spdlog
-    #imgui::imgui
     glm::glm
     "glad"
     "glfw" "${GLFW_LIBRARIES}")

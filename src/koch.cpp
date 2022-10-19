@@ -585,9 +585,8 @@ koch::koch(variable_wrapper& koch_wrapper)
     : iterations(0), point_counter(0),
       processor_count(std::thread::hardware_concurrency()), cos60(0.5),
       sin60(std::numbers::sqrt3 / 2), finished(true),
-      stop_VBO(false), vertex_shader_paths{"../scr/shaders/koch.vert"},
-      fragment_shader_paths{"../scr/shaders/koch.frag",
-                            "../scr/shaders/2D_grid.frag"},
+      stop_VBO(false), vertex_shader_paths{"./shaders/koch.vert"},
+      fragment_shader_paths{"./shaders/koch.frag", "./shaders/2D_grid.frag"},
       koch_shaders(vertex_shader_paths, fragment_shader_paths),
       wrapper(koch_wrapper)
 {
